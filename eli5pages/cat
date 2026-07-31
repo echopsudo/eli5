@@ -1,0 +1,4 @@
+cat is basically a reader for linux.
+
+usage:
+cat readme.txt (this opens up readme.txt)
