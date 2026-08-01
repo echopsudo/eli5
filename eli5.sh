@@ -3,6 +3,7 @@
 
 COMMAND=$1
 
+
 ELI5_HEADER() {
 	echo ""
 	echo "Explain I'm Like 5!, This is just man for people with ADHD"
@@ -19,10 +20,28 @@ READ() {
 	if [[ $COMMAND == "-l" || $COMMAND == "--list" ]]; then
 		READ=$(echo "list_mode")
 	else
-		echo ""
+		echo "====== $COMMAND ======="
 		READ=$(cat eli5pages/$COMMAND 2>/dev/null)
 		echo ""
 	fi
+}
+
+BRIEF() {
+	echo "DESCRIPTION:"
+	echo "$READ" | awk -v RS='~' 'NR==1'
+	echo ""
+}
+
+FUNCTIONS() {
+	echo "USAGE:"
+	echo "$READ" | awk -v RS='~' 'NR==2'
+	echo ""
+}
+
+EXAMPLES() {
+	echo "EXAMPLES:"
+	echo "$READ" | awk -v RS='~' 'NR==3'
+	echo ""
 }
 
 READER() {
@@ -33,8 +52,9 @@ READER() {
 	elif [[ $READ == "list_mode" ]]; then
 		LIST_ENTRIES
 	else
-		echo $READ
-		echo ""
+		BRIEF
+		FUNCTIONS
+		EXAMPLES
 	fi
 }
 
