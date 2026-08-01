@@ -1,6 +1,6 @@
  cat can read files on linux.
 ~ cat [OPTION]... [FILE]..
- OPTIONS (from --help, placeholder!):
+ OPTIONS (placeholder!, from --help):
   -A, --show-all           equivalent to -vET
   -b, --number-nonblank    number nonempty output lines, overrides -n
   -e                       equivalent to -vE
