@@ -6,7 +6,7 @@ COMMAND=$1
 
 ELI5_HEADER() {
 	echo "ABOUT"
-	echo " Explain I'm Like 5!, This is just man for people with ADHD. This was created because --help sometimes was too shallow, while the man page doesn't get to the point. Created by echopsudo on github. Enjoy!"
+	echo " Explain I'm Like 5!, This is just a personal man for people with ADHD. This was created because --help sometimes was too shallow, while the man page doesn't get to the point. eli5 will NOT cover everything, only essentials. For that, use man instead. Created by echopsudo on github. Enjoy!"
 	echo "USAGE"
 	echo " Get started with 'eli5 [COMMAND]' to see quick useful info about that command."
 	echo "EXAMPLES"
