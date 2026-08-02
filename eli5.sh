@@ -17,7 +17,7 @@ ELI5_HEADER() {
 LIST_ENTRIES() {
 	echo "====== ENTRIES ======="
 	echo ""
-	ls eli5pages/
+	ls -1 eli5pages/
 }
 
 READ() {
