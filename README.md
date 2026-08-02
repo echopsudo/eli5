@@ -4,7 +4,7 @@ eli5 (Explain like i'm 5) provides quick useful information about a command.
 
 avalible flags for now:
 
--l or --list 
+-l or --list (eli5 -l)
 - lists installed entries
 
 # FAQ:
