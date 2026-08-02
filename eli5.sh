@@ -5,8 +5,12 @@ COMMAND=$1
 
 
 ELI5_HEADER() {
-	echo ""
-	echo "Explain I'm Like 5!, This is just man for people with ADHD"
+	echo "ABOUT"
+	echo " Explain I'm Like 5!, This is just man for people with ADHD. This was created because --help sometimes was too shallow, while the man page doesn't get to the point. Created by echopsudo on github. Enjoy!"
+	echo "USAGE"
+	echo " Get started with 'eli5 [COMMAND]' to see quick useful info about that command."
+	echo "EXAMPLES"
+	echo " 'eli5 cat', this shows information about the command 'cat'"
 	echo ""
 }
 
@@ -21,6 +25,8 @@ READ() {
 		READ=$(echo "list_mode")
 	elif [[ $COMMAND == "-h" || $COMMAND == "--help" ]]; then
 		READ=$(echo "help_mode")
+	elif [[ $COMMAND == "" || $COMMAND == "--about" ]]; then
+		READ=$(echo "about_mode")
 	else
 		echo "====== $COMMAND ======="
 		READ=$(cat eli5pages/$COMMAND 2>/dev/null)
@@ -73,6 +79,8 @@ READER() {
 		LIST_ENTRIES
 	elif [[ $READ == "help_mode" ]]; then
 		HELP
+	elif [[ $READ == "about_mode" ]]; then
+		ELI5_HEADER
 	else
 		WARNING
 		BRIEF
