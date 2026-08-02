@@ -12,4 +12,4 @@ avalible flags for now:
 Kinda, man and --help provides useful info, but some of them just don't get to the point, so which is why i created this. 
 
 # Planned features:
-- eli5 entry installer (eli5 install xyz)
+- eli5 entry installer (eli5 install xyz), eli5 install -a installs every entry
