@@ -1,6 +1,6 @@
 # eli5
 
-eli5 (Explain like i'm 5) provides quick useful information about a command.
+eli5 (Explain like i'm 5) provides quick useful information about a command and the "whys".
 
 avalible flags for now:
 
