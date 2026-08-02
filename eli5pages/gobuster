@@ -1,0 +1,12 @@
+ gobuster is an aggresive enumerator that brute forces directories (dir), vhost, and domain name systems (dns).
+~ gobuster [mode] [flag(s)]
+
+MODES:
+ dir - directory enumeration
+ vhost - vhost enumeration
+ dns - dns enumeration
+FLAGS:
+ -u -- URL (dir mode)
+ -w -- wordlist path
+ -x -- enumerates for extensions for potentially more results. example: '-x php,txt'
+~  gobuster dir -u https://example.com -w /wordlists/Discovery/Web-Content/common.txt -- this enumerates directory of the website "example.com" using the wordlist from /wordlists/Discovery/Web-Content/common.txt
