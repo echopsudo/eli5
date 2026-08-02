@@ -62,11 +62,11 @@ EXAMPLES() {
 HELP() {
 	echo "ELI5 - helper"
 	echo ""
-	echo "FLAGS"
+	echo "FLAGS:"
 	echo "-h or --help - displays help"
 	echo "-l or --list - displays list"
 	echo ""
-	echo "EXAMPLES"
+	echo "EXAMPLES:"
 	echo "eli5 --help (displays help)"
 	echo "eli5 --list (displays list)"
 }
