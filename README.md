@@ -3,6 +3,7 @@
 eli5 (Explain like i'm 5) provides quick useful information about a command.
 
 avalible flags for now:
+
 l or --list 
 - lists installed entries
 
