@@ -19,6 +19,8 @@ LIST_ENTRIES() {
 READ() {
 	if [[ $COMMAND == "-l" || $COMMAND == "--list" ]]; then
 		READ=$(echo "list_mode")
+	elif [[ $COMMAND == "-h" || $COMMAND == "--help" ]]; then
+		READ=$(echo "help_mode")
 	else
 		echo "====== $COMMAND ======="
 		READ=$(cat eli5pages/$COMMAND 2>/dev/null)
@@ -26,6 +28,13 @@ READ() {
 	fi
 }
 
+WARNING() {
+	CHECK=$(which $COMMAND 2>/dev/null)
+	if [[ $CHECK == "" ]]; then
+		echo "! Entry Exists but command does not !"
+		echo ""
+	fi
+}
 BRIEF() {
 	echo "DESCRIPTION:"
 	echo "$READ" | awk -v RS='~' 'NR==1'
@@ -44,14 +53,28 @@ EXAMPLES() {
 	echo ""
 }
 
+HELP() {
+	echo "ELI5 - helper"
+	echo ""
+	echo "FLAGS"
+	echo "-h or --help - displays help"
+	echo "-l or --list - displays list"
+	echo ""
+	echo "EXAMPLES"
+	echo "eli5 --help (displays help)"
+	echo "eli5 --list (displays list)"
+}
 READER() {
 	READ
 	if [[ $READ == "" ]]; then
 		echo "No eli5 entry for the specified command!"
-		echo "You could try eli5 $COMMAND if you think the entry exists on eli5 repos."
+		#echo "You could try eli5 install $COMMAND if you think the entry exists on eli5 repos."
 	elif [[ $READ == "list_mode" ]]; then
 		LIST_ENTRIES
+	elif [[ $READ == "help_mode" ]]; then
+		HELP
 	else
+		WARNING
 		BRIEF
 		FUNCTIONS
 		EXAMPLES
